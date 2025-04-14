@@ -21,7 +21,9 @@ function Home() {
       <div className="w-[500px] h-[500px] absolute rounded-full border-2 border-[aqua] opacity-30"></div>
 
       {/* Rotating Orbit */}
-      <div className={`absolute w-[500px] h-[500px] rounded-full ${rotate ? "" : "animate-orbitSpin"}`}>
+      <div
+        className={`absolute w-[500px] h-[500px] rounded-full animate-orbitSpin ${rotate ? "paused" : ""}`}
+      >
         {icons.map((icon, idx) => {
           const angle = (idx / icons.length) * 2 * Math.PI;
           const x = radius * Math.cos(angle);
@@ -35,9 +37,10 @@ function Home() {
                 transform: `translate(${250 + x - 24}px, ${250 + y - 24}px)`,
               }}
             >
-              <div className= {`w-12 h-12 rounded-full border border-[aqua] flex items-center cursor-pointer justify-center ${rotate ? "" : "animate-iconSpin"} `}
-              onMouseEnter={() => {setRotate(true)}}
-              onMouseLeave={() => {setRotate(false)}}
+              <div 
+                className= {`w-12 h-12 rounded-full border border-[aqua] flex items-center cursor-pointer justify-center animate-iconSpin ${rotate ? "paused" : ""}`}
+                onMouseEnter={() => setRotate(true)}
+                onMouseLeave={() => setRotate(false)}
               >
                 <img src={icon} className="w-7 cursor-pointer h-7" />
               </div>
