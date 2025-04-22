@@ -5,3 +5,11 @@
 .paused{
     animation-play-state: paused !important;
 }
+
+
+.winky-rough-header {
+    font-family: "Winky Rough", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }

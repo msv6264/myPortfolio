@@ -6,17 +6,20 @@ import projects from "../assets/projects.svg";
 import experience from "../assets/experience.svg";
 import contact from "../assets/contact.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const radius = 250;
   const icons = [
-    { name: "𝙃𝒐𝙢𝒆", src: home },
-    { name: "𝑨𝒃𝒐𝒖𝒕", src: about },
-    { name: "𝑺𝒌𝒊𝒍𝒍𝒔", src: skills },
-    { name: "𝑷𝒓𝒐𝒋𝒆𝒄𝒕𝒔", src: projects },
-    { name: "𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒆", src: experience },
-    { name: "𝑪𝒐𝒏𝒕𝒂𝒄𝒕", src: contact },
+    { name: "𝙃𝒐𝙢𝒆", src: home, path: "/" },
+    { name: "𝑨𝒃𝒐𝒖𝒕", src: about, path: "/about" },
+    { name: "𝑺𝒌𝒊𝒍𝒍𝒔", src: skills, path: "/skills" },
+    { name: "𝑷𝒓𝒐𝒋𝒆𝒄𝒕𝒔", src: projects, path: "/projects" },
+    { name: "𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒆", src: experience, path: "/experience" },
+    { name: "𝑪𝒐𝒏𝒕𝒂𝒄𝒕", src: contact, path: "/contact" },
   ];
+  
+  const navigate = useNavigate();
   
   const [rotate, setRotate] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -54,6 +57,9 @@ function Home() {
                   onMouseLeave={() => {
                     setRotate(false);
                     setHoveredIndex(null);
+                  }}
+                  onClick={() => {
+                    navigate(icon.path)
                   }}
                 >
                   <img src={icon.src} className="w-7 h-7 cursor-pointer" />
