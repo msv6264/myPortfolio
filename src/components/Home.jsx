@@ -1,22 +1,23 @@
 import gif from "../assets/frame2.gif";
-import home from "../assets/home.svg";
 import about from "../assets/about.svg";
 import skills from "../assets/skills.svg";
 import projects from "../assets/projects.svg";
 import experience from "../assets/experience.svg";
+import resume from "../assets/resume.svg";
 import contact from "../assets/contact.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import pdf from "../assets/resume_file.pdf";
 
 function Home() {
   const radius = 250;
   const icons = [
-    { name: "𝙃𝒐𝙢𝒆", src: home, path: "/" },
+    { name: "𝑹𝒆𝒔𝒖𝒎𝒆", src: resume, path: pdf, isPdf: true},
     { name: "𝑨𝒃𝒐𝒖𝒕", src: about, path: "/about" },
     { name: "𝑺𝒌𝒊𝒍𝒍𝒔", src: skills, path: "/skills" },
     { name: "𝑷𝒓𝒐𝒋𝒆𝒄𝒕𝒔", src: projects, path: "/projects" },
     { name: "𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒆", src: experience, path: "/experience" },
-    { name: "𝑪𝒐𝒏𝒕𝒂𝒄𝒕", src: contact, path: "/contact" },
+    { name: "𝑺𝒐𝒄𝒊𝒂𝒍𝒔", src: contact, path: "/socials" },
   ];
   
   const navigate = useNavigate();
@@ -59,8 +60,12 @@ function Home() {
                     setHoveredIndex(null);
                   }}
                   onClick={() => {
-                    navigate(icon.path)
-                  }}
+                    if (icon.isPdf) {
+                      window.open(icon.path, "_blank");
+                    } else {
+                      navigate(icon.path);
+                    }
+                  }}                  
                 >
                   <img src={icon.src} className="w-7 h-7 cursor-pointer" />
                 </div>

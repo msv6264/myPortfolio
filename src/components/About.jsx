@@ -6,7 +6,7 @@ import home from "../assets/home.svg";
 function About() {
   const navigate = useNavigate();
   return (
-    <div  className="bg-[#050619] min-h-screen w-full relative overflow-hidden">
+    <div className="bg-[#050619] min-h-screen w-full relative overflow-hidden">
       <div className="homeIcon w-12 h-12 rounded-full border border-[aqua] flex items-center cursor-pointer justify-center absolute m-8" onClick={() => navigate("/")} >
         <img src={home} onClick={() => navigate("/")} className="w-7 h-7 cursor-pointer" />
       </div>
