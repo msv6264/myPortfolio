@@ -80,8 +80,10 @@ function Home() {
                 <div
                   className="w-24 h-12 text-[aqua] flex items-center cursor-pointer justify-center animate-iconSpin"
                   style={{
+                    // stops hidden icon name which is rotating
                     animationPlayState: rotate ? "paused" : "running",
-                    visibility: rotate ? "visible" : "hidden",
+                    // makes icon visible (which is hovered)
+                    visibility: hoveredIndex === idx ? "visible" : "hidden",
                   }}
                 >
                   {icon.name}

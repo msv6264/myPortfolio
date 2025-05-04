@@ -1,7 +1,10 @@
 import React from "react";
 import bg from "../assets/linktreeBG.jpg";
+import home from "../assets/home.svg";
+import { useNavigate } from "react-router-dom";
 
 function Socials() {
+  const navigate = useNavigate();
   return (
     <div
       className="min-h-screen bg-cover bg-center bg-no-repeat text-white p-5 backdrop-blur-sm"
@@ -9,6 +12,9 @@ function Socials() {
         backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${bg})`,
       }}
     >
+      <div className="homeIcon w-12 h-12 rounded-full border border-[aqua] flex items-center cursor-pointer justify-center absolute m-8" onClick={() => navigate("/")} >
+        <img src={home} onClick={() => navigate("/")} className="w-7 h-7 cursor-pointer" />
+      </div>
       <div className="max-w-2xl mx-auto bg-[#28284a] p-6 rounded-lg font-josefin">
         <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">Hello👋🏻, Welcome to my link tree 🌲</h1>
         <h2 className="text-xl md:text-2xl text-center mb-6">Here you can find all my socials 😊</h2>
