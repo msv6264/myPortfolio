@@ -6,10 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'markoOne': ['Marko One', 'serif'],
+        'inria': ['Inria Serif', 'serif'],
+      },
       screens:{
-        'xs': '380px',
+        'xs': '410px',
         'sm': '640px',
         'md': '768px',
+        'ms': '992px',
         'lg': '1024px',
         'xl': '1280px',
         '2xl': '1476px',

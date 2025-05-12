@@ -1,18 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Home_small({ icons, gif }) {
+export default function Home_medium({ icons, gif }) {
   const navigate = useNavigate();
 
-  const topIcons = icons.slice(0, 3);
-  const bottomIcons = icons.slice(3, 6);
+  const leftIcons = icons.slice(0, 3);
+  const rightIcons = icons.slice(3, 6);
 
   return (
-    <div className="bg-[#050619] absolute h-screen w-full flex flex-row items-center justify-center gap-4 overflow-hidden">
+    <div className="bg-[#050619] absolute h-screen w-full flex flex-col items-center justify-center gap-4 overflow-hidden">
 
-      {/* top Icons */}
-      <div className="absolute flex items-start h-screen justify-center gap-7 p-4 z-20">
-        {topIcons.map((icon, idx) => (
+      {/* Left Icons */}
+      <div className="absolute left-0 flex flex-col items-start h-screen justify-center gap-7 p-4 z-20">
+        {leftIcons.map((icon, idx) => (
           <div
             key={idx}
             className="w-12 h-12 rounded-full border border-aqua flex items-center justify-center cursor-pointer"
@@ -30,13 +30,13 @@ export default function Home_small({ icons, gif }) {
       </div>
 
       {/* Center GIF */}
-      <div className="w-[95%] flex justify-center items-center z-10">
+      <div className="w-[65%] flex justify-center items-center z-10">
         <img src={gif} className='w-full' alt="Animated Gif" />
       </div>
 
-      {/* bottom Icons */}
-      <div className="absolute flex items-end h-screen justify-center gap-7 p-4 z-20">
-        {bottomIcons.map((icon, idx) => (
+      {/* Right Icons */}
+      <div className="absolute right-0 flex flex-col items-end h-screen justify-center gap-7 p-4 z-20">
+        {rightIcons.map((icon, idx) => (
           <div
             key={idx}
             className="w-12 h-12 rounded-full border border-aqua flex items-center justify-center cursor-pointer"
