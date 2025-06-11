@@ -1,7 +1,7 @@
 import React from 'react';
 import netClone from "../assets/projImg_netflix.png";
 import musNest from "../assets/projImg_mus.png";
-import note from "../assets/projImg_note.png";
+import story from "../assets/storyGen.png";
 import ProjSmall from "../components/Proj_small";
 import ProjMed from "../components/Proj_med";
 import ProjBig from "../components/Proj_big";
@@ -10,6 +10,18 @@ import githubIcon from "../assets/github-icon.svg";
 export default function Projects() {
 
   const webProjects = [
+    {
+      title: "Mood -> story generator with TTS",
+      desc: [
+        {title: "Generates story according to user's mood"},
+        {title: "It is made using COHERE AI API"},
+        {title: "Tech: react, flask for backend"}
+      ],
+      image: story,
+      siteLink: "",
+      RepoLink: "https://github.com/msv6264/tony_tales"
+    },
+
     {
       title: "Music Nest",
       desc: [
@@ -32,18 +44,6 @@ export default function Projects() {
       image: netClone,
       siteLink: "https://myflix123.netlify.app/",
       RepoLink: "https://github.com/msv6264/Clone-Netflix"
-    },
-
-    {
-      title: "Note taking app",
-      desc: [
-        {title: "Simple & Efficient Note Management"},
-        {title: "Uses local storage to save notes"},
-        {title: "Clean Design with User Focus"}
-      ],
-      image: note,
-      siteLink: "https://stellular-axolotl-d196d0.netlify.app/",
-      RepoLink: "https://github.com/msv6264/NoteTakingApp"
     }
   ]
 
