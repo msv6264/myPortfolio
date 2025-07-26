@@ -1,5 +1,5 @@
 import React from "react";
-import home from "../assets/home.svg";
+import home from "../../assets/home.svg";
 import { useNavigate } from "react-router-dom";
 
 export default function Proj_med({ webProjects, githubWhite }) {

@@ -6,9 +6,9 @@ import experience from "../assets/experience.svg";
 import resume from "../assets/resume.svg";
 import contact from "../assets/contact.svg";
 import pdf from "../assets/resume_file.pdf";
-import HomeBig from "../components/Home_big";
-import HomeMed from "../components/Home_medium";
-import HomeSmall from "../components/Home_small";
+import HomeBig from "../components/homeComp/Home_big";
+import HomeMed from "../components/homeComp/Home_medium";
+import HomeSmall from "../components/homeComp/Home_small";
 
 function Home() {
   const icons = [

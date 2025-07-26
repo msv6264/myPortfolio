@@ -1,11 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home.jsx';
-import About from './components/About.jsx';
-import Skills from './components/Skills.jsx';
-import Socials from './components/Socials.jsx';
-import './index.css';
-import Projects from './components/Projects.jsx';
-import Experience from './components/Experience.jsx';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Skills from "./pages/Skills.jsx";
+import Socials from "./pages/Socials.jsx";
+import "./index.css";
+import Projects from "./pages/Projects.jsx";
+import Experience from "./pages/Experience.jsx";
+import UnderProgress from "./pages/UnderProgress.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/socials" element={<Socials />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/experience" element={<Experience />} />
+        <Route path="/resume-genie" element={<UnderProgress />} />
       </Routes>
     </Router>
   );

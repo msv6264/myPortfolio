@@ -1,12 +1,12 @@
 import React from 'react';
-import home from "../assets/home.svg";
+import home from "../../assets/home.svg";
 import { useNavigate } from "react-router-dom";
 
-export default function Proj_small({webProjects,  githubWhite}) {
+export default function Proj_big({webProjects,  githubWhite}) {
   const navigate = useNavigate();
   return (
     <div className='bg-[#050619] w-full overflow-y-scroll h-screen'>
-      <div className="homeIcon w-12 h-12 rounded-full border border-[aqua] flex items-center cursor-pointer justify-center m-16" onClick={() => navigate("/")} >
+      <div className="homeIcon w-12 h-12 rounded-full border border-[aqua] flex items-center cursor-pointer justify-center absolute m-16" onClick={() => navigate("/")} >
           <img src={home} onClick={() => navigate("/")} className="w-8 h-8 cursor-pointer" />
       </div>
 
@@ -17,28 +17,28 @@ export default function Proj_small({webProjects,  githubWhite}) {
       <div className='relative space-y-24 mb-[6%]' >
         {webProjects.map((project, idx) => {
             return (
-                <div className='flex flex-col-reverse m-auto gap-1 border border-[#b19c9c] rounded-[25px] bg-[#2d2b3a] w-[65%] sticky '
+                <div className='flex flex-row m-auto gap-1 border border-[#b19c9c] rounded-[25px] bg-[#2d2b3a] w-[65%] sticky '
                 style={{
                   top: `calc(64px + ${idx * 37}px)`,
                 }}
                 >
 
-                   {/* bottom: Project Content */}
-                  <div key={idx} className="w-[100%] h-[40%] p-[4%] mb-10 ">
+                   {/* Left: Project Content */}
+                  <div key={idx} className="w-[55%] h-[40%] p-[4%] mb-10 ">
                     <div className='m-2'>
-                      <div className='font-markoOne text-white text-2xl mt-[5%] ml-[14%] mb-8'>{project.title}</div>
+                      <div className='font-markoOne text-white text-4xl mt-[5%] ml-[14%] mb-10'>{project.title}</div>
                       <hr className="m-[5%] border-t border-gray-500" />
 
-                      <div className='flex flex-col gap-3 mt-8 align-middle justify-center'>
+                      <div className='flex gap-[15%] mt-10 align-middle justify-center'>
                           <div 
-                            className='rounded-[15px] text-[13px] bg-white p-[8px] w-[57%] h-[30%] flex align-middle justify-center font-bold gap-2 cursor-pointer m-auto ' 
+                            className='rounded-[15px] text-[18px] bg-white p-[10px] w-[25%] h-[50%] flex align-middle justify-center font-bold gap-2 cursor-pointer ' 
                             onClick={() => window.open(project.siteLink, "_blank")} >
                               Live site 
                               <span className="font-normal">&#8599;</span>
                           </div>
 
                           <div 
-                            className='rounded-[15px] text-white text-[13px] bg-black w-[75%] h-[40%] flex align-middle justify-center font-bold gap-3 cursor-pointer p-[10px] m-auto '
+                            className='rounded-[15px] text-white text-[17px] bg-black w-[45%] h-[50%] flex align-middle justify-center font-bold gap-4 cursor-pointer p-[10px] '
                             onClick={() => window.open(project.RepoLink, "_blank")} >
                               Source code 
                               <img src={githubWhite} className="w-6 h-6 rounded-full" alt="GitHub" />
@@ -46,7 +46,7 @@ export default function Proj_small({webProjects,  githubWhite}) {
                           </div>
                       </div> 
 
-                      <div className="text-[#b8b8ca] font-inria mt-4 ml-4 text-sm ">
+                      <div className="text-[#b8b8ca] font-inria mt-10 ml-4 text-xl ">
                         {project.desc.map((point, i) => (
                           <div key={i} className="mb-2 ml-4">• {point.title}</div>
                         ))}
@@ -54,8 +54,8 @@ export default function Proj_small({webProjects,  githubWhite}) {
                     </div>
                   </div>
 
-                  {/* top: Rectangular project image */}
-                  <div className='w-[80%] h-[150px] mt-[10%] m-auto rounded-xl overflow-hidden shadow-lg'>
+                  {/* Right: Rectangular project image */}
+                  <div className='w-[40%] h-[250px] m-auto rounded-xl overflow-hidden shadow-lg'>
                     <img 
                       className='w-full h-full object-cover' 
                       src={project.image} 
