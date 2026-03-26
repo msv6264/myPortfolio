@@ -4,79 +4,95 @@ import { useNavigate } from "react-router-dom";
 
 export default function Proj_med({ webProjects, githubWhite }) {
   const navigate = useNavigate();
+
   return (
-    <div className="bg-[#050619] w-full overflow-y-scroll h-screen">
-      <div className="homeIcon w-12 h-12 rounded-full border border-[aqua] flex items-center cursor-pointer justify-center absolute m-16" onClick={() => navigate("/")} >
-          <img src={home} onClick={() => navigate("/")} className="w-8 h-8 cursor-pointer" />
+    <div className="bg-[#050619] w-full overflow-y-scroll h-screen text-white">
+
+      {/* Home Button */}
+      <div
+        className="w-12 h-12 rounded-full border border-cyan-400 flex items-center justify-center absolute m-16 cursor-pointer hover:scale-110 transition"
+        onClick={() => navigate("/")}
+      >
+        <img src={home} className="w-8 h-8" />
       </div>
 
-      <div className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 text-4xl font-markoOne m-10 mb-14 ml-[20%]">
+      {/* Title */}
+      <div className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 text-3xl font-markoOne text-center m-10 mb-14">
         From Code to Reality: My Practical Web Projects
       </div>
 
-      <div className="relative space-y-24 mb-[6%]">
-        {webProjects.map((project, idx) => {
-          return (
-            <div
-              className="flex flex-row m-auto gap-1 border border-[#b19c9c] rounded-[25px] bg-[#2d2b3a] w-[65%] sticky "
-              style={{
-                top: `calc(64px + ${idx * 37}px)`,
-              }}
-            >
-              {/* Left: Project Content */}
-              <div key={idx} className="w-[55%] h-[40%] p-[4%] mb-10 ">
-                <div className="m-2">
-                  <div className="font-markoOne text-white text-4xl mt-[5%] ml-[14%] mb-10">
-                    {project.title}
-                  </div>
-                  <hr className="m-[5%] border-t border-gray-500" />
+      {/* Cards */}
+      <div className="relative space-y-20 mb-[6%]">
+        {webProjects.map((project, idx) => (
+          <div
+            key={idx}
+            className="flex flex-row m-auto gap-6 border border-white/10 rounded-2xl bg-[#1c1b29] shadow-xl w-[80%] hover:scale-[1.02] transition-all duration-300 sticky"
+            style={{
+              top: `calc(64px + ${idx * 30}px)`,
+            }}
+          >
+            {/* Left Content */}
+            <div className="w-[55%] p-6">
 
-                  <div className="text-[#b8b8ca] font-inria mt-10 ml-4 text-xl ">
-                    {project.desc.map((point, i) => (
-                      <div key={i} className="mb-2 ml-4">
-                        • {point.title}
-                      </div>
-                    ))}
-                  </div>
+              {/* Title + badge */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="font-markoOne text-white text-2xl">
+                  {project.title}
                 </div>
+
+                {project.featured && (
+                  <span className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full">
+                    Featured
+                  </span>
+                )}
               </div>
 
-              {/* Right: Rectangular project image */}
-              <div className="w-[40%] m-auto flex flex-col items-center justify-center">
-                <div className="h-[180px] rounded-xl overflow-hidden shadow-lg w-full">
-                  <img
-                    className="w-full h-full object-cover"
-                    src={project.image}
-                    alt={project.title}
-                  />
+              <hr className="border-white/10 mb-4" />
+
+              {/* Description */}
+              <div className="text-[#a1a1b5] text-sm leading-relaxed space-y-1">
+                {project.desc.map((point, i) => (
+                  <div key={i}>• {point.title}</div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right */}
+            <div className="w-[45%] flex flex-col items-center justify-center p-4">
+
+              {/* Image */}
+              <div className="h-[180px] w-full rounded-xl overflow-hidden shadow-lg mb-6">
+                <img
+                  className="w-full h-full object-cover hover:scale-105 transition duration-500"
+                  src={project.image}
+                  alt={project.title}
+                />
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-col gap-3 w-full items-center">
+                <div
+                  className="rounded-lg text-sm bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 w-[70%] text-center font-semibold cursor-pointer hover:scale-105 transition"
+                  onClick={() =>
+                    window.open(project.siteLink, "_blank", "noopener,noreferrer")
+                  }
+                >
+                  Live ↗
                 </div>
 
-                <div className="flex flex-col gap-4 mt-10 align-middle justify-center w-full">
-                  <div
-                    className="rounded-[15px] text-[13px] bg-white p-[10px] w-[50%] flex align-middle justify-center font-bold gap-2 cursor-pointer"
-                    onClick={() => window.open(project.siteLink, "_blank")}
-                  >
-                    Live site
-                    <span className="font-normal">&#8599;</span>
-                  </div>
-
-                  <div
-                    className="rounded-[15px] text-white text-[13px] bg-black w-[70%] flex align-middle justify-center font-bold gap-2 cursor-pointer p-[10px]"
-                    onClick={() => window.open(project.RepoLink, "_blank")}
-                  >
-                    Source code
-                    <img
-                      src={githubWhite}
-                      className="w-6 h-6 rounded-full"
-                      alt="GitHub"
-                    />
-                    <span className="font-normal">&#8599;</span>
-                  </div>
+                <div
+                  className="rounded-lg text-sm bg-white/10 px-4 py-2 w-[70%] text-center font-semibold cursor-pointer hover:bg-white/20 transition flex items-center justify-center gap-2"
+                  onClick={() =>
+                    window.open(project.RepoLink, "_blank", "noopener,noreferrer")
+                  }
+                >
+                  Code
+                  <img src={githubWhite} className="w-4 h-4" />
                 </div>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
