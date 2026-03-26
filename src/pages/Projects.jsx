@@ -12,39 +12,49 @@ export default function Projects() {
     {
       title: "Resume Genie",
       desc: [
-        { title: "Resume Genie generates ATS friendly resume" },
-        {
-          title: "Takes users linkedin data or chats with user to get details",
-        },
-        { title: "Highly reliable and efficient" },
+        { title: "AI-based resume generator that creates ATS-friendly resumes" },
+        { title: "Collects user data via LinkedIn input or interactive prompts" },
+        { title: "Explored fine-tuning concepts and structured prompt design" },
       ],
       image: rGenie,
       siteLink: "/resume-genie",
       RepoLink: "https://github.com/msv6264/Clone-Netflix",
     },
-
+  
     {
-      title: "Mood to story generator",
+      title: "Mood to Story Generator",
       desc: [
-        { title: "Generates story according to mood selected." },
-        { title: "React in frontend and flask as backend." },
-        { title: "Uses cohere API to generate story." },
+        { title: "Generates stories dynamically based on user-selected mood" },
+        { title: "Built using React (frontend) and Flask (backend)" },
+        { title: "Integrated Cohere API for AI text generation and narration" },
       ],
       image: mood,
       siteLink: "https://tony-tales.onrender.com/",
       RepoLink: "https://github.com/msv6264/tony_tales",
     },
-
+  
     {
       title: "Music Nest",
       desc: [
-        { title: "Personalized Music Experience" },
-        { title: "Creative UI Design" },
-        { title: "Modular Components and Clean Structure" },
+        { title: "Interactive music platform with responsive UI and media controls" },
+        { title: "Built using React with component-based architecture" },
+        { title: "Focused on performance, layout design, and user experience" },
       ],
       image: musNest,
       siteLink: "https://musicnest.netlify.app/",
       RepoLink: "https://github.com/msv6264/Music-nest",
+    },
+  
+    {
+      title: "DocForU (Stealth Micro-SaaS)",
+      desc: [
+        { title: "Building a document automation and management platform" },
+        { title: "Working on backend systems using Supabase and multi-tenant data handling" },
+        { title: "Currently solving real-world issues in data flow and system design" },
+      ],
+      image: musNest,
+      siteLink: "#",
+      RepoLink: "#",
     },
   ];
 
