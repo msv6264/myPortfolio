@@ -5,22 +5,10 @@ import ProjMed from "../components/projComp/Proj_med";
 import ProjBig from "../components/projComp/Proj_big";
 import githubIcon from "../assets/github-icon.svg";
 import mood from "../assets/moodProj.png";
-import rGenie from "../assets/resGenie.png";
+import dForU from "../assets/doc4U.png";
 
 export default function Projects() {
   const webProjects = [
-    {
-      title: "Resume Genie",
-      desc: [
-        { title: "AI-based resume generator that creates ATS-friendly resumes" },
-        { title: "Collects user data via LinkedIn input or interactive prompts" },
-        { title: "Explored fine-tuning concepts and structured prompt design" },
-      ],
-      image: rGenie,
-      siteLink: "/resume-genie",
-      RepoLink: "https://github.com/msv6264/Clone-Netflix",
-    },
-  
     {
       title: "Mood to Story Generator",
       desc: [
@@ -45,17 +33,18 @@ export default function Projects() {
       RepoLink: "https://github.com/msv6264/Music-nest",
     },
   
-    {
+   {
       title: "DocForU (Stealth Micro-SaaS)",
       desc: [
-        { title: "Building a document automation and management platform" },
-        { title: "Working on backend systems using Supabase and multi-tenant data handling" },
-        { title: "Currently solving real-world issues in data flow and system design" },
+        { title: "AI-powered platform for generating structured documents and presentations with fine-grained control over sections, headings, and content distribution" },
+        { title: "Designed a multi-service architecture (React + Node.js + FastAPI) to separate AI orchestration, business logic, and document rendering" },
+        { title: "Implemented structured JSON pipelines to convert AI output into native formats like PPTX using a dedicated Python rendering service" },
+        { title: "Currently transitioning from global state to Supabase for persistent storage and scalable data flow across sessions" },
       ],
-      image: musNest,
+      image: dForU,
       siteLink: "#",
       RepoLink: "#",
-    },
+    }
   ];
 
   return (
