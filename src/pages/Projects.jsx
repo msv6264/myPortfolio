@@ -20,7 +20,7 @@ export default function Projects() {
       siteLink: "https://tony-tales.onrender.com/",
       RepoLink: "https://github.com/msv6264/tony_tales",
     },
-  
+
     {
       title: "Music Nest",
       desc: [
@@ -32,33 +32,31 @@ export default function Projects() {
       siteLink: "https://musicnest.netlify.app/",
       RepoLink: "https://github.com/msv6264/Music-nest",
     },
-  
-   {
+
+    {
       title: "DocForU (Stealth Micro-SaaS)",
+      featured: true,
       desc: [
-        { title: "AI-powered platform for generating structured documents and presentations with fine-grained control over sections, headings, and content distribution" },
-        { title: "Designed a multi-service architecture (React + Node.js + FastAPI) to separate AI orchestration, business logic, and document rendering" },
-        { title: "Implemented structured JSON pipelines to convert AI output into native formats like PPTX using a dedicated Python rendering service" },
+        { title: "AI platform for generating structured documents and PPTs with controlled content layout" },
+        { title: "Built a multi-service system for AI orchestration and document rendering" },
+        { title: "Converts structured JSON into PPTX; adding Supabase for persistence" },
       ],
       image: dForU,
-      siteLink: "https://doc-for-u.vercel.app/",
-      RepoLink: "https://github.com/msv6264",
-    }
+      siteLink: "#",
+      RepoLink: "#",
+    },
   ];
 
   return (
     <div>
-      {/* For larger screens */}
       <div className="hidden ms:flex w-full h-full">
         <ProjBig webProjects={webProjects} githubWhite={githubIcon} />
       </div>
 
-      {/* For medium screens */}
       <div className="hidden md:flex ms:hidden w-full h-full">
         <ProjMed webProjects={webProjects} githubWhite={githubIcon} />
       </div>
 
-      {/* For small screens */}
       <div className="md:hidden w-full h-full">
         <ProjSmall webProjects={webProjects} githubWhite={githubIcon} />
       </div>
