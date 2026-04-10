@@ -42,8 +42,8 @@ export default function Projects() {
         { title: "Converts structured JSON into PPTX; adding Supabase for persistence" },
       ],
       image: dForU,
-      siteLink: "#",
-      RepoLink: "#",
+      siteLink: "https://doc-for-u.vercel.app",
+      RepoLink: "https://github.com/msv6264",
     },
   ];
 
