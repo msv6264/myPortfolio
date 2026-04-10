@@ -39,11 +39,10 @@ export default function Projects() {
         { title: "AI-powered platform for generating structured documents and presentations with fine-grained control over sections, headings, and content distribution" },
         { title: "Designed a multi-service architecture (React + Node.js + FastAPI) to separate AI orchestration, business logic, and document rendering" },
         { title: "Implemented structured JSON pipelines to convert AI output into native formats like PPTX using a dedicated Python rendering service" },
-        { title: "Currently transitioning from global state to Supabase for persistent storage and scalable data flow across sessions" },
       ],
       image: dForU,
-      siteLink: "#",
-      RepoLink: "#",
+      siteLink: "https://doc-for-u.vercel.app/",
+      RepoLink: "https://github.com/msv6264",
     }
   ];
 
