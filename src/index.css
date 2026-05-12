@@ -2,14 +2,168 @@
 @tailwind components;
 @tailwind utilities;
 
-.paused{
-    animation-play-state: paused !important;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #050619 0%, #0f0f2e 50%, #050619 100%);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(6, 182, 212, 0.05);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #06B6D4, #3B82F6);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #3B82F6, #A855F7);
+}
+
+/* Animation Classes */
+.paused {
+    animation-play-state: paused !important;
+}
 
 .winky-rough-header {
     font-family: "Winky Rough", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-  }
+}
+
+/* Smooth Transitions */
+@layer components {
+    .smooth-transition {
+        @apply transition-all duration-300 ease-out;
+    }
+
+    .gradient-text {
+        @apply bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent;
+    }
+
+    .glass-effect {
+        @apply bg-white/5 backdrop-blur-md border border-white/10;
+    }
+
+    .card-gradient {
+        @apply bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(6, 182, 212, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.8);
+    }
+}
+
+/* Animation Utilities */
+.animate-fade-in-down {
+    animation: fadeInDown 0.5s ease-out;
+}
+
+.animate-slide-in-up {
+    animation: slideInUp 0.6s ease-out;
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Links and Interactive Elements */
+a {
+    @apply smooth-transition;
+}
+
+a:hover {
+    color: #06b6d4;
+}
+
+/* Button Base Styles */
+button {
+    @apply smooth-transition font-semibold cursor-pointer;
+}
+
+/* Focus States */
+:focus-visible {
+    @apply outline-2 outline-offset-2 outline-cyan-400;
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 640px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Links and Interactive Elements */
+a {
+    @apply smooth-transition;
+}
+
+a:hover {
+    color: #06b6d4;
+}
+
+/* Prevent Text Selection on Interactions */
+.no-select {
+    @apply select-none;
+}

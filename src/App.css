@@ -1,3 +1,63 @@
-.paused {
-    animation-play-state: paused !important;
+/* App Container */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Page Transitions */
+.page-container {
+  animation: fadeInDown 0.4s ease-out;
+}
+
+/* Icon Button Styles */
+.homeIcon {
+  position: relative;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.homeIcon:hover {
+  border-color: rgba(6, 182, 212, 0.8);
+  background: rgba(6, 182, 212, 0.1);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+}
+
+/* Navigation Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive Container */
+@media (max-width: 640px) {
+  .homeIcon {
+    position: fixed;
   }
+}
+
+/* Loading State */
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Custom Cursor */
+* {
+  cursor: default;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  cursor: pointer;
+}
+
+/* Gradients */
+.gradient-primary {
+  background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 50%, #A855F7 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, #050619 0%, #0f0f2e 100%);
+}
